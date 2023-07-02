@@ -34,13 +34,13 @@ void loop(){
   int wheel_velocity=wheel_vel(softSerial2);
 
 //slave authentication
-  softSerial.print("I");
-  softSerial.print("1");  //slavenumber
-  softSerial.print("A");  //wait for corner angle
+  softSerial.print("I");  //start transmission, next value is slave number
+  softSerial.print("1");  //slave number
+  softSerial.print("A");  //next value is corner Angle
   softSerial.print(corner_angle);
-  softSerial.print("V");  //wait for wheel velocity
+  softSerial.print("V");  //next value is wheel Velocity
   softSerial.print(wheel_velocity);
-  softSerial.print("F");
+  softSerial.print("F");  //end of transmission
 
   softSerial.flush();
 }
